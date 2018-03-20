@@ -1,0 +1,6 @@
+{
+	"Data": {
+		"type": "sql",
+		"connectionString": "Server=technistuff.nl;Database=Pool;User Id=pool_user;Password=P00l1sc00l!"
+	}
+}
