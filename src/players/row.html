@@ -1,0 +1,6 @@
+<tr class="player" onclick="document.location.href='players/${player.ID}'">
+	<td>${rank}</td>
+	<td>${player.Name}</td>
+	<td class="rating">${Math.round(player.Rating)}</td>
+	<td>${Math.round(player.WinCount / player.MatchCount * 100)}</td>
+</tr>

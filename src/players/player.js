@@ -6,29 +6,18 @@ var players = SQL.execute("Data", `
 	FROM Player 
 	WHERE Player.ID = ${id}
 `);
-var player = players[0]
+var player = players[0];
 var total = player.WinCount + player.LoseCount;
-var winPercentage = player.WinCount / total * 100;
-var losePercentage = player.LoseCount / total * 100;
 
-<h1>player.Name</h1>
-
-<table>
-	<tr>
-		<td>"Gespeeld"</td>
-		<td>total</td>
-	</tr>
-	<tr>
-		<td>"Gewonnen"</td>
-		<td>player.WinCount + "(" + Math.round(winPercentage) + "%)"</td>
-	</tr>
-	<tr>
-		<td>"Verloren"</td>
-		<td>player.LoseCount + "(" + Math.round(losePercentage) + "%)"</td>
-	</tr>
-</table>
+include("players/player.html", {
+	player: player, 
+	total: total, 
+	winPercentage: player.WinCount / total * 100, 
+	losePercentage: player.LoseCount / total * 100
+});
 
 include("ratingGraph", {id: id});
+include("timeGraph", {id: id});
 
 var matches = SQL.execute("Data", `SELECT pw.Name AS WinnerName, pl.Name AS LoserName, DatePlayed FROM Match JOIN Player pw ON pw.ID = Match.Winner JOIN Player pl ON pl.ID = Match.Loser WHERE Match.Winner = ${id} OR Match.Loser = ${id} ORDER BY Match.DatePlayed DESC`);
-include("matchTable", {matches: matches});
+include("matches/table.html", {matches: matches});

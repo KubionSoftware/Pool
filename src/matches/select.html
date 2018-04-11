@@ -1,0 +1,6 @@
+<select name="${name}">
+	<option disabled selected value="">Selecteer speler</option>
+	${players.map(player => {
+		return `<option value="${player.Name}">${player.Name}</option>`;
+	}).join("")}
+</select>

@@ -1,0 +1,22 @@
+<form action="players/create" method="get">
+	<table>
+		<tr>
+			<td>Naam: </td>
+			<td><input type="text" name="name"/></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button type="submit">Aanmaken</button></td>
+		</tr>
+	</table>
+</form>
+
+<table class="styled players">
+	<tr>
+		<th>#</th>
+		<th>Naam</th>
+		<th>Rating</th>
+		<th>%</th>
+	</tr>
+
+	${include("players/table.js")}
+</table>

@@ -1,0 +1,15 @@
+<form action="matches/create" method="get">
+	<table>
+		<tr>
+			<td>Winnaar</td>
+			<td>${include("matches/select.html", {name: "winner", players: players})}</td>
+		</tr>
+		<tr>
+			<td>Verliezer</td>
+			<td>${include("matches/select.html", {name: "loser", players: players})}</td>
+		</tr>
+		<tr>
+			<td colspan="2"><button type="submit">Toevoegen</button></td>
+		</tr>
+	</table>
+</form>

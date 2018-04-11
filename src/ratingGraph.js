@@ -21,23 +21,4 @@ for(var match of history){
 	}
 }
 
-<canvas id="myChart" width="400" height="200"></canvas>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
-<script>`
-	var ctx = document.getElementById("myChart").getContext("2d");
-	var myLineChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			labels: ${JSON.stringify(labels)},
-			datasets: [{
-				label: "Rating",
-				data: ${JSON.stringify(graph)},
-				fill: false,
-				borderColor: "rgb(75, 192, 192)",
-				backgroundColor: "rgb(75, 192, 192)",
-				lineTension: 0.4
-			}]
-		},
-		options: {}
-	});
-`</script>
+include("ratingGraph.html", {labels: labels, graph: graph});

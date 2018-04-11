@@ -1,0 +1,22 @@
+<canvas id="timeChart" width="400" height="200"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+<script>
+	var ctx = document.getElementById("timeChart").getContext("2d");
+	var timeChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ${JSON.stringify(labels)},
+			datasets: [{
+				label: "Rating",
+				data: ${JSON.stringify(graph)},
+				borderColor: "#08415C",
+				backgroundColor: "#08415C"
+			}]
+		},
+		options: {
+			legend: {
+				display: false
+			}
+		}
+	});
+</script>

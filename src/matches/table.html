@@ -1,0 +1,9 @@
+<table class="matches styled">
+	<tr>
+		<th>Winnaar</th>
+		<th>Verliezer</th>
+		<th>Datum</th>
+	</tr>
+
+	${matches.forEach(match => include("matches/row.html", {match: match}))}
+</table>

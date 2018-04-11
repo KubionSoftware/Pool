@@ -36,6 +36,8 @@ table.styled, table.styled th, table.styled td {
 
 table.styled th, table.styled td{
 	padding: 4px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
 }
 
 table.styled tr:nth-child(odd) {
