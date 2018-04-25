@@ -1,11 +1,11 @@
 import("rating");
 
-if(request.path[1] == "create"){
+if(path[1] == "create"){
 	var rows = SQL.execute("Data", `
 		SELECT winner.ID AS winnerID, winner.Rating AS winnerRating, loser.ID AS loserID, loser.Rating AS loserRating 
 		FROM Player winner, Player loser 
-		WHERE winner.Name = '${request.params.winner}' 
-		AND loser.Name = '${request.params.loser}'
+		WHERE winner.Name = '${Request.getParameter("winner")}' 
+		AND loser.Name = '${Request.getParameter("loser")}'
 	`);
 	var data = rows[0];
 
